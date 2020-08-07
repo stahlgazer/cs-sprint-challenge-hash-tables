@@ -3,8 +3,19 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    table = {}
+    for array in arrays:
+        for item in array:
+            if item not in table:
+                table[item] = 1
+            else:
+                table[item] += 1
+    intersections = []
+    for item in table:
+        if table[item] == len(arrays):
+            intersections.append(item)
 
-    return result
+    return intersections
 
 
 if __name__ == "__main__":
